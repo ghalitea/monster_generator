@@ -1,0 +1,76 @@
+\documentclass{article}
+
+\usepackage{ragged2e}
+\usepackage[paperwidth=8.5in, paperheight=5.5in, textwidth=7.5in, textheight=4.5in]{geometry}
+
+\usepackage{multicol}
+\setlength{\columnsep}{0.5in}
+
+\usepackage{pagecolor}
+\pagecolor{white!90!yellow}
+
+\setlength\parindent{0pt}
+\thispagestyle{empty}
+
+\include{macros}
+
+\begin{document}
+	\normalsize
+	\begin{multicols*}{2}
+		\RaggedRight
+
+		\creatureName{Chaos Monster}
+
+		\textit{Medium Monstrosity, Chaotic evil}
+
+		\rule{3.5in}{1mm}
+
+		\attrib{Armour Class}{10 (natural armour)}\\
+
+		\hitpoints{1}{8}{0}\\
+		\attrib{Speed}{6 hex}
+
+		\rule{3.5in}{1mm}
+
+		\small
+
+		\stats{11}{15}{10}{9}{20}{14}
+
+		\normalsize
+
+		\rule{3.5in}{1mm}
+
+		\attrib{Skills}{Perception +5}\\
+		\attrib{Damage Immunities}{Poison}\\
+		\attrib{Senses}{Blindsight 12 hex, Darkvision 12 hex}\\
+		\attrib{Languages}{--}\\
+		\attrib{Challenge}{0 (10)}\\
+		\attrib{Proficiency Bonus}{+2}
+
+		\rule{3.5in}{1mm}
+
+		\vfill
+		\columnbreak
+
+		\ability{Water adversity}{Chaos monsters have an adversity to water. They don`t get 
+		damage from it, but they do shy away from it and they can and will not 
+		swim.}\\\bigskip
+
+		\rule{3.5in}{1mm}
+
+		\vspace{5pt}
+
+		{\large\scshape{Actions}}\\
+		\vspace{-1em}
+		\rule{3.5in}{0.5pt}
+
+		\ability{Acid Spray (Recharge 6)}{The monsters spits acid in a line that is 30 
+			feet long and 5 feet wide. Each creature in that line must make a DC 13 Dexterity 
+			saving throw taking\damage{3}{6}{0}{A} on a failed save, or half as much damage 
+			on a successful one.}\\\bigskip
+		\action{Horns}{\mwa}{\toH{6}, \reach{1}, one target. 
+			\textit{Hit:}\damage{1}{12}{4}{B}.}\\\bigskip
+
+		\vfill
+		\end{multicols*}
+\end{document}

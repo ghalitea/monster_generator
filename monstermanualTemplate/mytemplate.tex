@@ -1,0 +1,115 @@
+\documentclass{article}
+
+\usepackage{ragged2e}
+\usepackage[paperwidth=8.5in, paperheight=5.5in, textwidth=7.5in, textheight=4.5in]{geometry}
+
+\usepackage{multicol}
+\setlength{\columnsep}{0.5in}
+
+\usepackage{pagecolor}
+\pagecolor{white!90!yellow}
+
+\setlength\parindent{0pt}
+
+\thispagestyle{empty}
+
+%\usepackage{libertine}
+%\renewcommand*\familydefault{\sfdefault}
+
+\include{macros}
+
+\begin{document}
+	\normalsize
+	\begin{multicols*}{2}
+		\RaggedRight
+		%column_start -----------------------------------------------------------------
+		
+		% title
+		
+		\creatureName{Chaos Monster}
+		
+		\textit{Large Monstrosity, Chaotic evil}
+		
+		\rule{3.5in}{1mm}
+		
+		% ac hp & speed
+		
+		\attrib{Armour Class}{14 (natural armour)}\\
+		
+		\hitpoints{12}{10}{48}\\
+		\attrib{Speed}{6 hex}
+		
+		\rule{3.5in}{1mm}
+		
+		% stats
+		
+		\small
+		
+		\stats{19}{11}{19}{3}{14}{10}
+		
+		\normalsize
+		
+		\rule{3.5in}{1mm}
+		
+		\attrib{Skills}{Perception +8, Stealth +3}\\
+		\attrib{Damage Immunities}{Poison}\\
+		\attrib{Senses}{Darkvision 12 hex, Tremorsense 12 hex, Blindsight 12 hex, passive Perception 12}\\
+		\attrib{Languages}{--}\\
+		\attrib{Challenge}{6 (2300 XP)}\\
+		\attrib{Proficiency Bonus}{+3}
+		
+		\rule{3.5in}{1mm}
+		
+		%column_end -------------------------------------------------------------------
+		\vfill
+		\columnbreak
+		%column_start -----------------------------------------------------------------
+		
+		\ability{Water adversity}{Chaos monsters have an adversity to water. They don't get 
+			damage from it, but they do shy away from it and they can and will not 
+			swim}\\\bigskip
+		
+		\rule{3.5in}{1mm}
+		
+		\vspace{5pt}
+		
+		{\large\scshape{Actions}}\\
+		\vspace{-1em}
+		\rule{3.5in}{0.5pt}
+		
+		\ability{Multiattack}{The Monster can make a second attack right after it made 
+			a first one. This attack can ether be the same action as the first one or a 
+			different one.}\\\bigskip
+		\action{Bite}{\mwa}{\toH{6}, \reach{1}, one target. 
+			\textit{Hit:}\damage{2}{6}{4}{Pie}. If the target is a creature, it must succeed 
+			on a DC 12 Constitution saving throw against disease or become poisoned until 
+			the disease is cured. Every 24 hours that elapse, the creature must repeat the 
+			saving throw, reducing its hit point maximum by\damage{1}{10}{0}{z} on a failure. This 
+			reduction lasts until the disease is cured. The creature dies if the disease 
+			reduces its hit point maximum to 0.}\\\bigskip
+		\action{Horns}{\mwa}{\toH{6}, \reach{1}, one target. 
+			\textit{Hit:}\damage{1}{12}{4}{B}.}\\\bigskip
+		\action{Claws}{\mwa}{\toH{6}, \reach{1}, one target.
+			\textit{Hit:}\damage{2}{6}{4}{S}}\\\bigskip
+		\action{Hooves}{\mwa}{\toH{6}, \reach{1}, one target.
+			\textit{Hit:}\damage{2}{6}{4}{B}}\\\bigskip
+		\action{Tentacles}{\mwa}{\toH{4}, \reach{1}, one target.
+			\textit{Hit:}\damage{2}{6}{2}{S}}\\\bigskip
+		\action{Beak}{\mwa}{\toH{6}, \reach{1}, one target.
+			\textit{Hit:}\damage{1}{10}{3}{Pie}}\\\bigskip
+		\action{Tail Spike}{\rwa}{\toH{6}, \reach{20/40}, one target.
+			\textit{Hit:}\damage{1}{8}{3}{Pie}}\\\bigskip
+		\ability{Acid Spray (Recharge 6)}{The monsters spits acid in a line that is 30 
+			feet long and 5 feet wide. Each creature in that line must make a DC 13 Dexterity 
+			saving throw taking\damage{3}{6}{0}{A} on a failed save, or half as much damage 
+			on a successful one.}\\\bigskip
+		\action{Web (Recharge 5-6)}{\rwa}{\toH{4}, \reach{6/12}, one large or smaller creature.
+			\textit{Hit:} The creature is restrained by webbing. As an action, the restrained 
+			creature can make a DC 11 Strength check, escaping from the webbing on a success. 
+			The effect also ends if the webbing is destroyed. The webbing has AC 10, 5 
+			hit points, vulnerability to fire damage, and immunity to bludgeoning, poison, 
+			and psychic damage.}\\\bigskip
+		%column_end -------------------------------------------------------------------
+		\vfill
+		\end{multicols*}
+\end{document}

@@ -1,0 +1,351 @@
+% Appropriately arranges the document and the page, columns, and page color
+% I keep the text color black throughout the document black because I don't have
+% access to a color printer. If you do, feel free to modify the code to 
+% accurately mimic the font colors used in the Monster Manual.
+\documentclass{article}
+\usepackage{ragged2e}
+\usepackage[paperwidth=8.5in, paperheight=11in, textwidth=7.5in, textheight=10.5in]{geometry}
+
+\usepackage{multicol}
+\setlength{\columnsep}{0.5in}
+
+\usepackage{pagecolor}
+\pagecolor{white!65!yellow}
+
+\setlength\parindent{0pt}
+
+% Below lines import typeface used (most resembling) the typeface of the MM
+\usepackage{libertine}
+\renewcommand*\familydefault{\sfdefault}
+%\usepackage[T1]{fontenc}
+
+% An import of all macros that are utilized to simplify the Stat-Block generating
+% process. Documentation available within.
+\include{macros}
+
+
+\begin{document}
+	% And so it begins...
+	
+	% Choose a text size by commenting out not used.
+	
+	% Smaller than standard Monster Manual™ text
+	%\scriptsize
+	
+	% Closest approximation to standard Monster Manual™ text (default)
+	\footnotesize
+	
+	% Slightly larger than Monster Manual™ text
+	%\small
+	
+	% Larger than Monster Manual™ text
+	%\normalsize
+	
+	% For smaller text sizes (\footnotesize and \scriptsize), it may be more
+	% appropriate to use \medskip or \smallskip instead of \bigskip
+	
+	\begin{multicols*}{2}
+		\RaggedRight
+		%\raggedright
+		
+		% I suggest copy-pasting the stat-blocks from the 'STAT BLOCK START' to the
+		% 'STAT BLOCK FINISH' lines when using this template. The spacing is the most
+		% difficult obstacle, I found. Copy and pasting allows the same conventions to
+		% be observed. Feel free to experiment, however! 
+		% STAT BLOCK START -------------------------------------------------------------
+		\creatureName{Drow}
+		
+		\textit{Medium humanoid (elf), neutral evil}
+		
+		\rule{3.5in}{1mm}
+		
+		\attrib{Armor Class}{15 (chain shirt)}\\
+		% \hitpoints \damage and \hit macros allow for an accurate calculation (and
+		% display) of the dice to roll and the expected values therein. More detailed
+		% info in the macros.tex file. As an example, below:
+		% The below line will write '11 (2d8 + 2)'. The 2 (number of dice), 8 (number of
+		% sides of the dice), and 2 (the external modifier) are provided, and the
+		% expected value of 11 (what DnD5e uses for streamlining) is calculated)
+		\hitpoints{3}{8}{0}\\
+		\attrib{Speed}{30 ft.}
+		
+		\rule{3.5in}{1mm}
+		
+		% simply input the stat values (not modifiers) into the cooresponding slots and
+		% the macro will calculate and produce a stat-table with appropriate modifiers.
+		% They are to be entered in the following order: STR DEX CON INT WIS CHA.
+		\stats{10}{14}{10}{11}{11}{12}
+		
+		\rule{3.5in}{1mm}
+		
+		\attrib{Skills}{Perception +2, Stealth +4}\\
+		\attrib{Senses}{darkvision 120 ft., passive Perception 12}\\
+		\attrib{Languages}{Elvish, Undercommon}\\
+		\attrib{Challenge}{1/4 (50 XP)}
+		
+		\rule{3.5in}{1mm}
+		
+		\ability{Fey Ancestry}{The drow has advantage on saving throws against being
+			charmed, and magic can't put the drow to sleep.}\\\bigskip
+		\ability{Innate Spellcasting}{The drow's spellcasting ability is Charisma (spell
+			save DC 11). It can innately cast the following spells, requiring no material
+			components:}\\\medskip
+		At will: \textit{dancing lights}\\
+		1/day each: \textit{darkness, faerie fire}\\\bigskip
+		\ability{Sunlight Sensitivity}{While in sunlight, the drow has disadvantage on
+			attack rolls, as well as on Wisdom (Perception) checks that rely on sight.}
+		
+		\rule{3.5in}{1mm}
+		
+		\vspace{5pt}
+		
+		{\large\scshape{Actions}}\\
+		\vspace{-1em}
+		\rule{3.5in}{0.5pt}
+		
+		\action{Shortsword}{\mwa}{\toH{4}, \reach{5}, one target. 
+			\textit{Hit:} \damage{1}{6}{2}{Pie}.}\\\bigskip
+		\action{Hand Crossbow}{\rwa}{\toH{4}, \rangeTwo{30}{120}, one target.
+			\textit{Hit:} \damage{1}{6}{2}{Pie} and the target must succeed on a DC 13
+			Constitution saving throw or be poisoned for 1 hour. If the saving throw fails
+			by 5 or more, the target is also unconscious while poisoned in this way. The
+			target wakes up if it takes damage or if another creature takes an action to
+			shake it awake.}
+		% STAT BLOCK END   -------------------------------------------------------------
+		\vfill
+		\columnbreak
+		%\\
+		%\\
+		% Above lines can be omitted if both statblocks fit on the same half of the page
+		% In such a case, however, uncomment the line-breaks to provide some space
+		% between the two stat-blocks.
+		% STAT BLOCK START -------------------------------------------------------------
+		\creatureName{Drow Elite Warrior}
+		
+		\textit{Medium humanoid (elf), neutral evil}
+		
+		\rule{3.5in}{1mm}
+		
+		\attrib{Armor Class}{18 (studded leather, shield)}\\
+		% \hitpoints \damage and \hit macros allow for an accurate calculation (and
+		% display) of the dice to roll and the expected values therein. More detailed
+		% info in the macros.tex file. As an example, below:
+		% The below line will write '11 (2d8 + 2)'. The 2 (number of dice), 8 (number of
+		% sides of the dice), and 2 (the external modifier) are provided, and the
+		% expected value of 11 (what DnD5e uses for streamlining) is calculated)
+		\hitpoints{11}{8}{22}\\
+		\attrib{Speed}{30 ft.}
+		
+		\rule{3.5in}{1mm}
+		
+		% simply input the stat values (not modifiers) into the cooresponding slots and
+		% the macro will calculate and produce a stat-table with appropriate modifiers.
+		% They are to be entered in the following order: STR DEX CON INT WIS CHA.
+		\stats{13}{18}{14}{11}{13}{12}
+		
+		\rule{3.5in}{1mm}
+		
+		\attrib{Saving Throws}{Dex +7, Con +5, Wis +4}\\
+		\attrib{Skills}{Perception +4, Stealth +10}\\
+		\attrib{Senses}{darkvision 120 ft., passive Perception 14}\\
+		\attrib{Languages}{Elvish, Undercommon}\\
+		\attrib{Challenge}{5 (1,800 XP)}
+		
+		\rule{3.5in}{1mm}
+		
+		\ability{Fey Ancestry}{The drow has advantage on saving throws against being
+			charmed, and magic can't put the drow to sleep.}\\\bigskip
+		\ability{Innate Spellcasting}{The drow's spellcasting ability is Charisma (spell
+			save DC 12). It can innately cast the following spells, requiring no material
+			components:}\\\medskip
+		At will: \textit{dancing lights}\\
+		1/day each: \textit{darkness, faerie fire, levitate} (self only)\\\bigskip
+		\ability{Sunlight Sensitivity}{While in sunlight, the drow has disadvantage on
+			attack rolls, as well as on Wisdom (Perception) checks that rely on sight.}
+		
+		\rule{3.5in}{1mm}
+		
+		\vspace{5pt}
+		
+		{\large\scshape{Actions}}\\
+		\vspace{-1em}
+		\rule{3.5in}{0.5pt}
+		
+		\ability{Multiattack}{The drow makes two shortsword attacks.}\\\bigskip
+		\action{Shortsword}{\mwa}{\toH{7}, \reach{5}, one target. 
+			\textit{Hit:} \damage{1}{6}{4}{Pie} plus \damage{3}{6}{0}{Poi}.}\\\bigskip
+		\action{Hand Crossbow}{\rwa}{\toH{4}, \rangeTwo{30}{120}, one target.
+			\textit{Hit:} \damage{1}{6}{4}{Pie} and the target must succeed on a DC 13
+			Constitution saving throw or be poisoned for 1 hour. If the saving throw fails
+			by 5 or more, the target is also unconscious while poisoned in this way. The
+			target wakes up if it takes damage or if another creature takes an action to
+			shake it awake.}
+		
+		\vspace{5pt}
+		
+		{\large\scshape{Reactions}}\\
+		\vspace{-1em}
+		\rule{3.5in}{0.5pt}
+		
+		\ability{Parry}{The drow adds 3 to its AC against one melee attack that would
+			hit it. To do so, the drow must see the attacker and be wielding a melee
+			weapon.}
+		% STAT BLOCK END   -------------------------------------------------------------
+		\vfill
+		\columnbreak
+		%\\
+		%\\
+		% Above lines can be omitted if both statblocks fit on the same half of the page
+		% In such a case, however, uncomment the line-breaks to provide some space
+		% between the two stat-blocks.
+		% STAT BLOCK START -------------------------------------------------------------
+		\creatureName{Drow Mage}
+		
+		\textit{Medium humanoid (elf), neutral evil}
+		
+		\rule{3.5in}{1mm}
+		
+		\attrib{Armor Class}{12 (15 with \textit{mage armor})}\\
+		% \hitpoints \damage and \hit macros allow for an accurate calculation (and
+		% display) of the dice to roll and the expected values therein. More detailed
+		% info in the macros.tex file. As an example, below:
+		% The below line will write '11 (2d8 + 2)'. The 2 (number of dice), 8 (number of
+		% sides of the dice), and 2 (the external modifier) are provided, and the
+		% expected value of 11 (what DnD5e uses for streamlining) is calculated)
+		\hitpoints{10}{8}{0}\\
+		\attrib{Speed}{30 ft.}
+		
+		\rule{3.5in}{1mm}
+		
+		% simply input the stat values (not modifiers) into the cooresponding slots and
+		% the macro will calculate and produce a stat-table with appropriate modifiers.
+		% They are to be entered in the following order: STR DEX CON INT WIS CHA.
+		\stats{9}{14}{10}{17}{13}{12}
+		
+		\rule{3.5in}{1mm}
+		
+		\attrib{Skills}{Arcana +6, Deception +5, Perception +4, Stealth +5}\\
+		\attrib{Senses}{darkvision 120 ft., passive Perception 14}\\
+		\attrib{Languages}{Elvish, Undercommon}\\
+		\attrib{Challenge}{7 (2,900 XP)}
+		
+		\rule{3.5in}{1mm}
+		
+		\ability{Fey Ancestry}{The drow has advantage on saving throws against being
+			charmed, and magic can't put the drow to sleep.}\\\bigskip
+		\ability{Innate Spellcasting}{The drow's spellcasting ability is Charisma (spell
+			save DC 12). It can innately cast the following spells, requiring no material
+			components:}\\\medskip
+		At will: \textit{dancing lights}\\
+		1/day each: \textit{darkness, faerie fire, levitate} (self only)\\\bigskip
+		\ability{Spellcasting}{The drow is a 10th-level spellcaster. Its spellcasting
+			ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The
+			drow has the following wizard spells prepared:}\\\medskip
+		Cantrips (at will): \textit{mage hand, minor illusion, poison spary, ray of frost}\\
+		1st level (4 slots): \textit{mage armor, magic missile, shield, witch bolt}\\
+		2nd level (3 slots): \textit{alter self, misty step, web}\\
+		3rd level (3 slots): \textit{fly, lightning bolt}\\
+		4th level (3 slots): \textit{Evard's black tentacles, greater invisibility}\\
+		5th level (2 slots): \textit{cloudkill}\\\bigskip
+		\ability{Sunlight Sensitivity}{While in sunlight, the drow has disadvantage on
+			attack rolls, as well as on Wisdom (Perception) checks that rely on sight.}
+		
+		\rule{3.5in}{1mm}
+		
+		\vspace{5pt}
+		
+		{\large\scshape{Actions}}\\
+		\vspace{-1em}
+		\rule{3.5in}{0.5pt}
+		
+		\action{Staff}{\mwa}{\toH{2}, \reach{5}, one target. \textit{Hit:}
+			\damage{1}{6}{-1}{B}, or \damage{1}{8}{-1}{B} if used with two hands, plus
+			\damage{1}{6}{0}{Poi}.}\\\bigskip
+		\ability{Summon Demon (1/Day)}{The drow magically summons a quasit, or attempts
+			to summon a shadow demon with a 50 percent chance of success. The summoned
+			demon appears in an unoccupied space within 60 feet of its summoner, acts as
+			an ally of its summoner, and can't summon other demons. It remains for 10
+			minutes, until it or its summoner dies, or until its summoner dismisses it as
+			an action.}
+		% STAT BLOCK END   -------------------------------------------------------------
+		\vfill
+		\columnbreak
+		%\\
+		%\\
+		% Above lines can be omitted if both statblocks fit on the same half of the page
+		% In such a case, however, uncomment the line-breaks to provide some space
+		% between the two stat-blocks.
+		% STAT BLOCK START -------------------------------------------------------------
+		\creatureName{Drow Priestess of Lolth}
+		
+		\textit{Medium humanoid (elf), neutral evil}
+		
+		\rule{3.5in}{1mm}
+		
+		\attrib{Armor Class}{16 (scale mail)}\\
+		% \hitpoints \damage and \hit macros allow for an accurate calculation (and
+		% display) of the dice to roll and the expected values therein. More detailed
+		% info in the macros.tex file. As an example, below:
+		% The below line will write '11 (2d8 + 2)'. The 2 (number of dice), 8 (number of
+		% sides of the dice), and 2 (the external modifier) are provided, and the
+		% expected value of 11 (what DnD5e uses for streamlining) is calculated)
+		\hitpoints{13}{8}{13}\\
+		\attrib{Speed}{30 ft.}
+		
+		\rule{3.5in}{1mm}
+		
+		% simply input the stat values (not modifiers) into the cooresponding slots and
+		% the macro will calculate and produce a stat-table with appropriate modifiers.
+		% They are to be entered in the following order: STR DEX CON INT WIS CHA.
+		\stats{10}{14}{12}{13}{17}{18}
+		
+		\rule{3.5in}{1mm}
+		
+		\attrib{Saving Throws}{Con +4, Wis +6, Cha +7}
+		\attrib{Skills}{Insight +6, Perception +6, Religion +5, Stealth +5}
+		\attrib{Senses}{darkvision 120 ft., passive Perception 16}\\
+		\attrib{Languages}{Elvish, Undercommon}\\
+		\attrib{Challenge}{8 (3,900 XP)}
+		
+		\rule{3.5in}{1mm}
+		
+		\ability{Fey Ancestry}{The drow has advantage on saving throws against being
+			charmed, and magic can't put the drow to sleep.}\\\bigskip
+		\ability{Innate Spellcasting}{The drow's spellcasting ability is Charisma (spell
+			save DC 15). It can innately cast the following spells, requiring no material
+			components:}\\\medskip
+		At will: \textit{dancing lights}\\
+		1/day each: \textit{darkness, faerie fire, levitate} (self only)\\\bigskip
+		\ability{Spellcasting}{The drow is a 10th-level spellcaster. Her spellcasting
+			ability is Charisma (spell save DC 14, +6 to hit with spell attacks). The
+			drow has the following cleric spells prepared:}\\\medskip
+		Cantrips (at will): \textit{guidance, poison spray, resistance, spare the dying, thaumaturgy}\\
+		1st level (4 slots): \textit{animal friendship, cure wounds, detect poison and disease, ray of sickness}\\
+		2nd level (3 slots): \textit{lesser restoration, protection from poison, web}\\
+		3rd level (3 slots): \textit{conjure animals} (2 giant spiders), \textit{dispel magic}\\
+		4th level (3 slots): \textit{divination, freedom of movement}\\
+		5th level (2 slots): \textit{insect plague, mass cure wounds}\\\bigskip
+		\ability{Sunlight Sensitivity}{While in sunlight, the drow has disadvantage on
+			attack rolls, as well as on Wisdom (Perception) checks that rely on sight.}
+		
+		\rule{3.5in}{1mm}
+		
+		\vspace{5pt}
+		
+		{\large\scshape{Actions}}\\
+		\vspace{-1em}
+		\rule{3.5in}{0.5pt}
+		
+		\ability{Multiattack}{The drow makes two scourge attacks}\\\bigskip
+		\action{Scourge}{\mwa}{\toH{5}, \reach{5}, one target. \textit{Hit:} 
+			\damage{1}{6}{2}{Pie} plus \damage{5}{6}{0}{Poi}.}\\\bigskip
+		\ability{Summon Demon (1/Day)}{The drow attempts to magically summon a yochlol
+			with a 30 percent chance of success. If the attempt fails, the drow takes
+			\damage{1}{10}{0}{Psy}. Otherwise, the summoned demon appears in an unoccupied
+			space within 60 feet of its summoner, acts as an ally of its summoner, and
+			can't summon other demons. It remains for 10 minutes, until it or its summoner
+			dies, or until its summoner dismisses it as an action.}
+		% STAT BLOCK END   -------------------------------------------------------------
+		
+	\end{multicols*}
+\end{document}
